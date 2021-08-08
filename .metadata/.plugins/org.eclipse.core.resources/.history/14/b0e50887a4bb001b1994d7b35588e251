@@ -1,0 +1,13 @@
+package com.movieapp.service;
+
+import com.movieapp.model.Movie;
+
+public class MovieServiceImpl implements MovieService {
+
+	@Override
+	public void addMovie(Movie movie) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

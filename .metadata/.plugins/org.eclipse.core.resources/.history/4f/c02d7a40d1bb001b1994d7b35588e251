@@ -1,0 +1,29 @@
+package com.movieapp.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.movieapp.model.Genre;
+import com.movieapp.repository.GenreRepository;
+
+@Service
+public class GenreServiceImpl implements GenreService {
+
+	
+	@Autowired
+	GenreRepository genreRepository;
+	
+	@Override
+	public void addGenre(Genre genre) {
+		// TODO Auto-generated method stub
+       genreRepository.save(genre);
+	}
+
+	@Override
+	public Genre findByGenreId(Integer genreId) {
+		// TODO Auto-generated method stub
+		return genreRepository.findById(genreId).orElse(null);
+	}
+
+	
+}

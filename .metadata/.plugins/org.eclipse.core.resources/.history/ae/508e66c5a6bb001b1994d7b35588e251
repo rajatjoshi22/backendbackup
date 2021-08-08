@@ -1,0 +1,19 @@
+package com.movieapp.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.movieapp.model.Theatre;
+import com.movieapp.repository.*;
+
+public class TheatreServiceImpl implements TheatreService {
+
+	
+	@Autowired
+	TheatreRepository theatreRepository;
+	@Override
+	public void addTheatre(Theatre theatre) {
+		// TODO Auto-generated method stub
+       theatreRepository.save(theatre);
+	}
+
+}

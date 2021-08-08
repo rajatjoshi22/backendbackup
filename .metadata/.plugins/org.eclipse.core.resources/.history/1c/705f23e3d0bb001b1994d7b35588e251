@@ -1,0 +1,41 @@
+package com.movieapp.model;
+import java.util.Set;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+
+@Entity
+@Table(name="SpringMGenre")
+@NoArgsConstructor
+@Getter
+@Setter
+public class Genre {
+    
+	@Id
+	@GeneratedValue(generator = "genremseq",strategy = GenerationType.SEQUENCE)
+	@SequenceGenerator(name = "genremseq",sequenceName = "genrem_seq",initialValue=21,allocationSize = 2)
+	@Column(name="genreid")
+	private Integer genreId;
+	
+	@Column(name="genrename")
+	private String genreName;
+	
+	@ManyToMany(mappedBy ="genreList")
+	private Set<Movie> movie;
+
+	public Genre(String genreName) {
+		super();
+		this.genreName = genreName;
+	}
+	
+}

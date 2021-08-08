@@ -1,0 +1,7 @@
+package com.furniture.services;
+
+import com.furniture.models.Product;
+
+public class ProductService {
+
+public void addProduct(Product product);}

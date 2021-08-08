@@ -1,0 +1,73 @@
+package com.studentapp;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.studentapp.model.Student;
+import com.studentapp.service.StudentService;
+import com.studentapp.service.StudentServiceImpl;
+
+@SpringBootApplication
+public class StudentBasicAppApplication implements CommandLineRunner {
+
+	public static void main(String[] args) {
+		SpringApplication.run(StudentBasicAppApplication.class, args);
+	}
+
+	@Autowired
+	Student student1;
+    @Autowired
+    Student student2;
+    @Autowired
+    Student student3;
+    @Autowired
+    Student student4;
+    @Autowired
+    Student student5;
+    @Autowired
+    StudentServiceImpl service;
+    @Autowired
+    StudentService serviceImpl;
+	
+	@Override
+	public void run(String... args) throws Exception {
+		// TODO Auto-generated method stub
+		student1.setStudentName("Rajat");
+		student1.setStudentId(123);
+		student1.setCity("Delhi");
+		
+		student2.setStudentName("Rohan");
+		student2.setStudentId(163);
+		student2.setCity("Delhi");
+		
+		student3.setStudentName("Raju");
+		student3.setStudentId(133);
+		student3.setCity("Chennai");
+		
+		student4.setStudentName("Roman");
+		student4.setStudentId(193);
+		student4.setCity("Newyork");
+		
+		student5.setStudentName("Dwayn");
+		student5.setStudentId(173);
+		student5.setCity("Ohio");
+		List<Student> studentList=new ArrayList<>(Arrays.asList(student1,student2,student3,student4,student5));
+		service.setStudentList(studentList);
+		
+		List<Student> studentByCity=serviceImpl.getStudentByCity("Delhi");
+		studentByCity.forEach(System.out::println);
+		
+		Student  student=serviceImpl.getStudentbyId(193);
+		System.out.println(student);
+		
+		
+	}
+
+}

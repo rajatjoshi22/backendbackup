@@ -1,0 +1,13 @@
+package com.movieapp.service;
+
+import com.movieapp.model.Genre;
+
+public class GenreServiceImpl implements GenreService {
+
+	@Override
+	public void addGenre(Genre genre) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

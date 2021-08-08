@@ -1,0 +1,40 @@
+package com.furniture.models;
+
+import java.util.List;
+
+import javax.annotation.Generated;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
+
+@Entity
+@Table(name="SpringFurniture")
+@Getter
+@Setter
+public class Product {
+@Column(name="productname")
+private String productName;
+@Id
+@GeneratedValue(generator = "productseq1",strategy =GenerationType.SEQUENCE )
+@SequenceGenerator(name = "productseq1",sequenceName = "product_seq1",allocationSize = 1)
+private Integer productId;
+private Double price;
+@OneToMany(cascade = CascadeType.ALL)
+@JoinColumn(name="categoryid")
+private List<Category> categoryList;
+private String brand;
+private String description;
+@Column(name="imagepath")
+private String imagePath;
+private Double ratings;
+
+}

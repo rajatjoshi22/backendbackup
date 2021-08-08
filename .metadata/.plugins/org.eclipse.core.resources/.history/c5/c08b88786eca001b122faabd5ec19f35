@@ -1,0 +1,25 @@
+package com.movieapp.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.movieapp.model.Cart;
+import com.movieapp.repository.CartRepository;
+
+public class CartServiceImpl implements CartService {
+
+	@Autowired
+	CartRepository cartRepository;
+	
+	@Override
+	public void addToCart(Cart cart) {
+		// TODO Auto-generated method stub
+      cartRepository.save(cart);
+	}
+
+	@Override
+	public void removeByMovieMovieId(Integer movieId) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

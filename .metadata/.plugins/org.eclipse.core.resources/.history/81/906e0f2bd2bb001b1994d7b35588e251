@@ -1,0 +1,8 @@
+package com.movieapp.service;
+
+import com.movieapp.model.Theatre;
+
+public interface TheatreService {
+
+	public void addTheatre(Theatre theatre);
+}

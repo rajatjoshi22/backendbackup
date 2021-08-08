@@ -1,0 +1,43 @@
+package com.movieapp.model;
+
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Entity
+@Table(name="SpringMOrder")
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@Getter
+@Setter
+public class Order {
+	
+	@Id
+	@Column(name="orderid")
+	private Integer orderId;
+	@OneToOne
+	@JoinColumn(name="user_id")
+	private User user;
+	@OneToOne
+	@JoinColumn(name="movie_id")
+	private Movie movie;
+	
+	@Column(name="ticketcount")
+	private Integer ticketCount;
+	
+	@Column(name="paymentmode")
+    private String paymentMode;
+
+
+}

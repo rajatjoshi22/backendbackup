@@ -1,0 +1,46 @@
+package com.furniture.models;
+import java.util.List;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+
+
+import lombok.Data;
+@Entity
+@Table(name="SpringFurniture")
+@Data
+public class Product {
+@Column(name="productname")
+private String productName;
+@Id
+@Column(name="productid")
+@GeneratedValue(generator = "productseq1",strategy =GenerationType.SEQUENCE )
+@SequenceGenerator(name = "productseq1",sequenceName = "product_seq1",allocationSize = 1)
+private Integer productId;
+private Double price;
+
+@ManyToMany(cascade = CascadeType.ALL)
+@JoinTable(name="hibercat_prod",joinColumns = @JoinColumn(name="prod_id"),inverseJoinColumns =@JoinColumn(name="cat_id"))
+private List<Category> categoryList;
+
+@ManyToOne
+@JoinColumn(name="brand_id")
+private Brand brand;
+private String description;
+@Column(name="imagepath")
+private String imagePath;
+private Double ratings;
+
+}

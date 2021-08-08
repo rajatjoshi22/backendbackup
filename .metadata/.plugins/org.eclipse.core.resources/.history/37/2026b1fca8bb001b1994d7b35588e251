@@ -1,0 +1,68 @@
+package com.movieapp.model;
+
+import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+
+@Entity
+@Table(name="SpringMMovie")
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+public class Movie {	
+@Column(name="moviename")
+private String movieName;
+private Integer ratings;
+@Id
+@GeneratedValue(generator = "moviemseq",strategy = GenerationType.SEQUENCE)
+@SequenceGenerator(name = "moviemseq",sequenceName = "moviem_seq",initialValue=50,allocationSize = 2)
+@Column(name="movieid")
+private Integer movieId;
+private String language;
+
+@ManyToMany(cascade = CascadeType.MERGE,fetch = FetchType.EAGER)
+@JoinTable(name="Hibermovie_genre",joinColumns= {@JoinColumn(name="movie_id")},inverseJoinColumns = {@JoinColumn(name="genre_id")})
+private Set<Genre> genreList;
+private String director;
+private String actor;
+private String actress;
+private String date;
+private Double price;
+@OneToOne(cascade = CascadeType.MERGE)
+@JoinColumn(name="theatre_id")
+private Theatre theatre;
+public Movie(String movieName, Integer ratings, String language, String director, String actor, String actress,
+		String date, Double price) {
+	super();
+	this.movieName = movieName;
+	this.ratings = ratings;
+	this.language = language;
+	this.director = director;
+	this.actor = actor;
+	this.actress = actress;
+	this.date = date;
+	this.price = price;
+}
+
+
+}

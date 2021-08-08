@@ -1,0 +1,5 @@
+package com.movieapp.repository;
+
+public class GenreRepository {
+
+}

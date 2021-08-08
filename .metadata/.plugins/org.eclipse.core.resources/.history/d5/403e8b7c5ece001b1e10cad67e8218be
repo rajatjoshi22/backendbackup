@@ -1,0 +1,6 @@
+package com.furniture.services;
+
+public class TypeService {
+
+	public void addType(Type type);
+}

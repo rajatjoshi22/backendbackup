@@ -1,0 +1,5 @@
+package com.movieapp.exceptions;
+
+public class MovieNotFound extends Exception {
+
+}

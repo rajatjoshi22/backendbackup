@@ -1,0 +1,19 @@
+package com.furniture.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.furniture.models.Category;
+import com.furniture.repository.*;
+
+public class CategoryServiceImpl implements CategoryService {
+
+
+ @Autowired
+ CategoryRepository categoryRepository;
+	@Override
+	public void addCategory(Category category) {
+		// TODO Auto-generated method stub
+         
+	}
+
+}

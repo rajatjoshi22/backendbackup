@@ -1,0 +1,6 @@
+package com.furniture.services;
+
+public interface BrandService {
+
+	public void addBrand(Brand brand);
+}

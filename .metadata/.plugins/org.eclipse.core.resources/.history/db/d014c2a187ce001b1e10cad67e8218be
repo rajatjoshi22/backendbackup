@@ -1,0 +1,5 @@
+package com.furniture.controllers;
+
+public class ProductController {
+
+}

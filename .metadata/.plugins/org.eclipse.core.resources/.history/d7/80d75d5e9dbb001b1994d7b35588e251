@@ -1,0 +1,32 @@
+package com.movieapp.model;
+
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+public class Movie {
+	
+	@Column(name="moviename")
+private String movieName;
+private Integer ratings;
+
+@Id
+private Integer movieId;
+private String language;
+
+private Set<Genre> genreList;
+private String director;
+private String actor;
+private String actress;
+private String date;
+private Double price;
+
+@OneToOne
+@JoinColumn(name="theatre_id")
+private Theatre theatre;
+
+
+}

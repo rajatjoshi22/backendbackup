@@ -1,0 +1,24 @@
+package com.furniture.models;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+import lombok.Data;
+
+@Entity
+@Data
+@Table(name="SpringCategory")
+public class Category {
+    @Column(name="categoryname")
+	private String categoryName;
+    @Id
+    @GeneratedValue(generator = "catseq1",strategy =GenerationType.SEQUENCE )
+    @SequenceGenerator(name = "catseq1",sequenceName = "cat_seq1",initialValue = 21,allocationSize = 1)
+    private Integer categoryId;
+    
+}

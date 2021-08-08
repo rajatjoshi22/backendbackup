@@ -1,0 +1,19 @@
+package com.furniture.services;
+
+import com.furniture.models.Type;
+
+public class TypeServiceImpl implements TypeService {
+
+	@Override
+	public void addtype(Type type) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Type getById(Integer typeId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

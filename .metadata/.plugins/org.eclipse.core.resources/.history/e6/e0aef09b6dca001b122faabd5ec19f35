@@ -1,0 +1,13 @@
+package com.movieapp.service;
+
+import com.movieapp.model.Cart;
+
+public class CartServiceImpl implements CartService {
+
+	@Override
+	public void addToCart(Cart cart) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

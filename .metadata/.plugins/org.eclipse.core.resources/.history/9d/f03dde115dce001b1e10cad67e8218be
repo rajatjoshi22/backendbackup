@@ -1,0 +1,13 @@
+package com.furniture.services;
+
+import com.furniture.models.Brand;
+
+public class BrandServiceImpl implements BrandService {
+
+	@Override
+	public void addBrand(Brand brand) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

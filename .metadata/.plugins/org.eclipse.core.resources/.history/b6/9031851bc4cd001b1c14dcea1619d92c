@@ -1,0 +1,68 @@
+package com.furniture.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.furniture.models.Product;
+import com.furniture.repository.ProductRepository;
+
+public class ProductServiceImpl implements ProductService {
+
+@Autowired
+ProductRepository productRepository;
+	@Override
+	public void addProduct(Product product) {
+		// TODO Auto-generated method stub
+		 productRepository.save(product);
+	}
+
+	@Override
+	publicvoid  updateProduct(Product product) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteProduct(Integer productId) {
+		// TODO Auto-generated method stub
+	   productRepository.deleteById(productId);;
+	}
+
+	@Override
+	public List<Product> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Product> getByCategory(String category) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Product> getByType(String type) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Product> getByBrand(String brand) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Product> getByCategoryAndType(String category, String type) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Product> getByTypeAndLowerPrice(String type, double price) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

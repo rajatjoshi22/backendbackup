@@ -1,0 +1,5 @@
+package com.furniture.services;
+
+public interface ProductService {
+
+}

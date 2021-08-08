@@ -1,0 +1,44 @@
+package com.movieapp.model;
+
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+
+@Entity
+@Table(name="SpringMGenre")
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
+public class Genre {
+
+	@Id
+	@Column(name="genreid")
+	private String genreId;
+	
+	private String genreName;
+	
+	@JsonIgnore
+	@ManyToMany(mappedBy = "genreList")
+	private Set<Movie> movieList;
+
+	public Genre(String genreId, String genreName) {
+		super();
+		this.genreId = genreId;
+		this.genreName = genreName;
+	}
+	
+	
+}

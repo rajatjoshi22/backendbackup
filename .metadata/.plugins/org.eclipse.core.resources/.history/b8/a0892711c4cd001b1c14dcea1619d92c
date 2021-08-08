@@ -1,0 +1,21 @@
+package com.furniture.services;
+
+import java.util.List;
+
+import com.furniture.models.Product;
+
+public interface ProductService {
+
+	Product addProduct(Product product);
+	Product updateProduct(Product product);
+	boolean deleteProduct(Integer productId);
+	
+	
+	List<Product> getAll();
+	List<Product> getByCategory(String category);
+	List<Product> getByType(String type);
+	List<Product> getByBrand(String brand);
+	List<Product> getByCategoryAndType(String category,String type);
+	List<Product> getByTypeAndLowerPrice(String type,double price);
+	
+}

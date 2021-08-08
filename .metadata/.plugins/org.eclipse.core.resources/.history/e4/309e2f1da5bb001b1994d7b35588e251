@@ -1,0 +1,13 @@
+package com.movieapp.service;
+
+import com.movieapp.model.Theatre;
+
+public class TheatreServiceImpl implements TheatreService {
+
+	@Override
+	public void addTheatre(Theatre theatre) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

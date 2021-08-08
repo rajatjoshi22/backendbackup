@@ -1,0 +1,6 @@
+package com.movieapp.service;
+
+public interface TheatreService {
+
+	public void addTheatre(Theatre theatre);
+}
